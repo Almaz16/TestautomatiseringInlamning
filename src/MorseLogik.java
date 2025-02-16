@@ -30,6 +30,10 @@ public class MorseLogik {
             if (textToMorse.containsKey(c)) {
                 morse.append(textToMorse.get(c)).append(" ");
             }
+            else {
+                // Om tecknet inte finns i morse-tabellen returneras ett felmeddelande
+                return " Fel: Ogiltigt tecken ";
+            }
         }
         return morse.toString().trim();
     }
@@ -43,6 +47,10 @@ public class MorseLogik {
                 text.append(morseToText.get(morseChar));
             } else if (morseChar.equals("/")) { // Mellanslag mellan ord
                 text.append(" ");
+            }
+            else {
+                // Om morsekoden inte finns i tabellen returneras ett felmeddelande
+                return " Fel: Ogiltig morsekod ";
             }
         }
         return text.toString();

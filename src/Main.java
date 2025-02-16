@@ -13,5 +13,28 @@ public class Main {
             int choice = scanner.nextInt();
             scanner.nextLine();  // detta tar bort radbrytning
 
+            switch (choice) {
+                case 1:
+                    System.out.print("Skriv in text: ");
+                    String text = scanner.nextLine();
+                    System.out.println("Morsekod: " + translator.toMorse(text));
+                    break;
 
-        }}}
+                case 2:
+                    System.out.print("Skriv in morsekod (använd mellanslag mellan bokstäver och '/' för mellanrum): ");
+                    String morse = scanner.nextLine();
+                    System.out.println("Text: " + translator.fromMorse(morse));
+                    break;
+
+                case 3:
+                    System.out.println("Avslutar programmet...");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Felaktigt val, försök igen.");
+            }
+            System.out.println();
+        }
+    }
+}
