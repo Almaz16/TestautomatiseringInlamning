@@ -15,7 +15,7 @@ public class MorseLogik {
                 {"Z", "--.."}, {"Å", ".--.-"}, {"Ä", ".-.-"}, {"Ö", "---."},
                 {" ", "/"}  // Mellanslag hanteras som "/"
         };
-
+                       // här vi lägger alla tecken i HashMaps
         for (String[] pair : morseAlphabet) {
             textToMorse.put(pair[0].charAt(0), pair[1]);
             morseToText.put(pair[1], pair[0].charAt(0));
@@ -32,7 +32,7 @@ public class MorseLogik {
             }
             else {
                 // Om tecknet inte finns i morse-tabellen returneras ett felmeddelande
-                return " Fel: Ogiltigt tecken ";
+                return "Fel: Ogiltigt tecken ";
             }
         }
         return morse.toString().trim();
